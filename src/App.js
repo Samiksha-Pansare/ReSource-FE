@@ -5,12 +5,17 @@ import {
   Link
 } from "react-router-dom";
 import Signup from './Components/Signup';
+import Indexbody from './Components/Indexbody';
+import SliderLogin from "./Components/SliderLogin";
+import LogIn from "./Components/LogIn";
 
 function App() {
   return (
     <Router>
         <Routes>
           <Route exact path="/signup" element={<><Signup/></>}/>
+          <Route exact path="/" element={<><Indexbody/></>}/>
+          <Route exact path="/login" element={<><LogIn/></>}/>
           {/* <Route exact path="/feed" element={<><Navbar/><Feed/></>}/>
 
           <Route exact path="/upcomingconf" element={<><Navbar/><UpcomingConferences/></>}/>

@@ -1,20 +1,21 @@
 import React from "react";
-import '../Css/logsvg.css';
 
 function Icon() {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       xmlnssvgjs="http://svgjs.com/svgjs"
-      xmlnsXlink="http://www.w3.org/1999/xlink"
-      style={{ width: "100%", height: "100%" }}
+      xmlnsxlink="http://www.w3.org/1999/xlink"
+      width="autp"
+      height="auto"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        xmlnsXlink="http://www.w3.org/1999/xlink"
+        xmlnsxlink="http://www.w3.org/1999/xlink"
+        width="autp"
+        height="auto"
         data-name="Layer 1"
         viewBox="0 0 635.4 597"
-        style={{ width: "100%", height: "100%" }}
       >
         <defs>
           <linearGradient

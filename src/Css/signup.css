@@ -3,7 +3,7 @@
   position: relative;
   list-style-type: none;
   padding: 0;
-  max-width: 80vw;
+  max-width: 60vw;
   margin: 10% auto 0;
 }
 .card {
@@ -25,6 +25,7 @@
   transform: translateY(-25px) rotate(4deg) translateX(25px) scale(1);
   background: #E5BAFF;
   height: 100%;
+  width: 60vw;
 
 }
 .card--out {
@@ -34,10 +35,11 @@
   z-index: 1;
   background: #F4E6FF;
   height: 100%;
+  width: 60vw;
 
 }
 .loginform {
-  padding-left: 200px;
+  /* padding-left: 200px; */
   font-family: 'Work Sans', sans-serif;
 }
 
@@ -50,6 +52,7 @@
   background: #F7EBFF;
   transform: rotate(0deg) translateX(0%) scale(1);
   box-shadow: 0 0 2px #000;
+  width: 60vw;
 }
 h1.heading {
   margin: 0;
@@ -89,6 +92,12 @@ input{
 label{
   color: #cfcfcf;
 }
+.svg-img{
+  width: 100%!important;
+}
+.imgcol {
+  justify-content: center;
+}
 
 /* Responsiveness */
 /* Responsive Media Queries */
@@ -96,9 +105,22 @@ label{
 /* // Small devices (landscape phones, 576px and up) */
 @media (max-width: 576px) 
 {
+  .cards {
+    max-width: 95vw !important;
+    margin-right:auto;
+    margin-left:auto;
+  }
 	.loginform {
     padding-left: 0px;
   }  
+  .card--next {
+    max-width: 95vw !important;  
+    transform: translateY(-25px) rotate(2deg) translateX(25px) scale(1);
+  }
+  .card--out {
+    max-width: 95vw !important;
+    transform: translateY(-50px) rotate(4deg) translateX(55px) scale(1);
+  }
   
 }
 
@@ -110,17 +132,16 @@ label{
   }      
   .card--next {
     z-index: 5;
-    transform: translateY(-25px) rotate(4deg) translateX(25px) scale(1);
+    transform: translateY(-25px) rotate(4deg) translateX(55px) scale(1);
     background: #E5BAFF;
   
   }
   .card--out {
     -webkit-animation: card-out 0.6s cubic-bezier(0.8, 0.2, 0.1, 0.8);
             animation: card-out 0.6s cubic-bezier(0.8, 0.2, 0.1, 0.8);
-    transform: translateY(-50px) rotate(8deg) translateX(55px) scale(1);
+    transform: translateY(-50px) rotate(8deg) translateX(75px) scale(1);
     z-index: 1;
     background: #F4E6FF;
-  
   }
   
   
