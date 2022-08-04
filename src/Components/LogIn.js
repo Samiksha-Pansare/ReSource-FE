@@ -1,12 +1,23 @@
 import React, {useState,Component} from 'react';
+// import { useRef } from 'react';
 import  Register from '../Images/register.svg';
 import Log from '../Images/log.svg';
+import "../Css/passwordstrengthmeter.css";
 import '../Css/login.css';
+import { Link } from 'react-router-dom';
+import ReCAPTCHA from "react-google-recaptcha"
 
 export default class LogIn extends Component {
     constructor(props) {
       super(props);
+      this.myRef = React.createRef();
       this.state = {signupmode: true};
+      this.state = {
+        value: 0,
+        password: "",
+        confirmpassword:"",
+        error:"",
+      };
       this.handleSignInClick = this.handleSignInClick.bind(this);
       this.handleLogInClick = this.handleLogInClick.bind(this);
     }
@@ -17,8 +28,74 @@ export default class LogIn extends Component {
     handleLogInClick(){
         this.setState({signupmode: false});
       }
+      updatePasswordvalue = (ev) => {
+        this.setState({
+          password: ev.target.value,
+        });
+        this.changeMeterValue();
+        console.log("Update pw");
+      };
+      changeMeterValue = () => {
+        const StrongPassword = new RegExp(
+          "^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])(?=.{8,})"
+        );
+        const MediumPassword = new RegExp(
+          "^(((?=.*[a-z])(?=.*[A-Z]))|((?=.*[a-z])(?=.*[0-9]))|((?=.*[A-Z])(?=.*[0-9])))(?=.{6,})"
+        );
+        if (this.state.password.length === 1) {
+          this.setState({
+            value: 0,
+          });
+        } else {
+          if (StrongPassword.test(this.state.password)) {
+            this.setState({
+              value: 100,
+            });
+          } else {
+            if (MediumPassword.test(this.state.password)) {
+              this.setState({
+                value: 50,
+              });
+            } else {
+              this.setState({
+                value: 10,
+              });
+            }
+          }
+        }
+      };
+      createPasswordLabel = (testedResult) => {
+        switch (testedResult) {
+          case 0:
+            return "Weak";
+          case 5:
+            return "Weak";
+          case 10:
+            return "Fair";
+          case 50:
+            return "Good";
+          case 100:
+            return "Strong";
+          default:
+            return "Weak";
+        }
+      };
+      updateConfirmPasswordvalue = (ev) => {
+        this.setState({
+          confirmpassword: ev.target.value,
+        });
+        console.log("cp: ",this.state.confirmpassword);
+        if (this.state.confirmpassword != this.state.password)
+        {
+          this.state.error = "Password and Confirm Passwords Do not match"
+        }
+
+      };
+
   render() {
-    const issignupclicked = this.state.signupmode    
+    const issignupclicked = this.state.signupmode  
+    var testedResult = this.state.value;
+    
     return (
       <>
       <div className={`container container-anime  ${issignupclicked === true  ? 'sign-up-mode' : 'null'}`}>
@@ -28,59 +105,63 @@ export default class LogIn extends Component {
             <h2 className="title">Log in</h2>
             <div className="input-field">
               <i className="fas fa-user"></i>
-              <input type="text" placeholder="Username" />
+              <input type="email"  placeholder="Email" />
             </div>
             <div className="input-field">
               <i className="fas fa-lock"></i>
               <input type="password" placeholder="Password" />
             </div>
-            <input type="submit" value="Login" className="btn  sign-btn  solid" />
-            <p className="social-text">Or Sign in with social platforms</p>
-            <div className="social-media">
-              <a href="#" className="social-icon">
-                <i className="fab fa-facebook-f"></i>
-              </a>
-              <a href="#" className="social-icon">
-                <i className="fab fa-twitter"></i>
-              </a>
-              <a href="#" className="social-icon">
-                <i className="fab fa-google"></i>
-              </a>
-              <a href="#" className="social-icon">
-                <i className="fab fa-linkedin-in"></i>
-              </a>
-            </div>
+            <input type="submit" value="Login" className="btn btn-primary sign-btn" />
+          <Link to={'/'} className="fp">Forgot Password?</Link> 
           </form>
           <form action="#" className="sign-up-form">
             <h2 className="title">Sign up</h2>
             <div className="input-field">
               <i className="fas fa-user"></i>
-              <input type="text" placeholder="Username" />
+              <input type="text" placeholder="Institute Name" />
             </div>
             <div className="input-field">
               <i className="fas fa-envelope"></i>
-              <input type="email" placeholder="Email" />
+              <input type="email" placeholder="Institute Email" />
             </div>
+            
             <div className="input-field">
               <i className="fas fa-lock"></i>
-              <input type="password" placeholder="Password" />
+              <input
+          type="password"
+          onChange={this.updatePasswordvalue}
+          className="password"
+          placeholder="Password"
+        />
+        </div>
+        <div className="password-strength-meter input-field">
+          <progress
+            className={`password-strength-meter-progress strength-${this.createPasswordLabel(
+              testedResult
+            )}`}
+            value={this.state.value}
+            max="100"
+          />
+          <br />
+          <label className="password-strength-meter-label">
+            <>
+              <strong>Password strength:</strong>{" "}
+              {this.createPasswordLabel(testedResult)}
+            </>
+          </label>
+        </div>
+              
+            
+            <div className="input-field">
+              <i className="fas fa-lock"></i>
+              <input type="password" placeholder="Confirm Password" value={this.state.confirmpassword}    onChange={this.updateConfirmPasswordvalue} />
+              <strong  className="password-strength-meter-label">{this.state.error}</strong>
             </div>
-            <input type="submit" className="btn  sign-btn " value="Sign up" />
-            <p className="social-text">Or Sign up with social platforms</p>
-            <div className="social-media">
-              <a href="#" className="social-icon">
-                <i className="fab fa-facebook-f"></i>
-              </a>
-              <a href="#" className="social-icon">
-                <i className="fab fa-twitter"></i>
-              </a>
-              <a href="#" className="social-icon">
-                <i className="fab fa-google"></i>
-              </a>
-              <a href="#" className="social-icon">
-                <i className="fab fa-linkedin-in"></i>
-              </a>
+            <div className="input-field captcha">
+            <ReCAPTCHA sitekey='6LczfkchAAAAAJ6wnD7N20LaX0HP_ed18GKZe03o' ref={this.myRef} />
             </div>
+            <input type="submit" className="btn btn-primary sign-btn " value="Sign up" />
+            
           </form>
         </div>
       </div>
