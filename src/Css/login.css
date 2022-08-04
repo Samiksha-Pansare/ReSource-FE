@@ -398,6 +398,7 @@ Link.fp {
     top: 5%;
     transform: translate(-50%, 0);
   }
+  
 }
 
 @media (max-width: 570px) {
@@ -432,5 +433,12 @@ Link.fp {
   }
   .container-anime {
     height: 100vh !important;
+  }
+  .input-field {
+    height: 45px;
+  }
+  
+  .input-field i {
+    line-height: 45px;
   }
 }
