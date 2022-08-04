@@ -157,8 +157,8 @@ export default class LogIn extends Component {
               <input type="password" placeholder="Confirm Password" value={this.state.confirmpassword}    onChange={this.updateConfirmPasswordvalue} />
               <strong  className="password-strength-meter-label">{this.state.error}</strong>
             </div>
-            <div className="input-field captcha">
-            <ReCAPTCHA sitekey='6LczfkchAAAAAJ6wnD7N20LaX0HP_ed18GKZe03o' ref={this.myRef} />
+            <div className="input-field captcha d-flex justify-content-center">
+            <ReCAPTCHA sitekey='6LczfkchAAAAAJ6wnD7N20LaX0HP_ed18GKZe03o' ref={this.myRef}  />
             </div>
             <input type="submit" className="btn btn-primary sign-btn " value="Sign up" />
             

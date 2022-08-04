@@ -68,6 +68,7 @@ form.sign-in-form {
   font-size: 2.2rem;
   color: #444;
   margin-bottom: 10px;
+  font-weight:bolder;
 }
 input {
   background-color: #f0f0f0;
@@ -75,7 +76,8 @@ input {
 }
 .captcha{
   margin: 10px;
-  padding-left: 3.3rem;
+  margin-left: 4.4rem !important;
+  margin-bottom: 30px !important;
 
 }
 .input-field {

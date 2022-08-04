@@ -5,7 +5,6 @@ export default class indexbody extends Component {
   render() {
     return (
       <div>
-        <button><Link to={'/signup'}>Signup</Link></button>
         <button><Link to={'/login'}>Login</Link></button>
       </div>
     )
