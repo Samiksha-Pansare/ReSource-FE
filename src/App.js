@@ -14,7 +14,7 @@ function App() {
         <Routes>
           <Route exact path="/" element={<><Indexbody/></>}/>
           <Route exact path="/login" element={<><LogIn/></>}/>
-          <Route exact path="/addres" element={<><AddResources/></>}/>
+          <Route exact path="/addres" element={<AddResources/>}/>
         </Routes>
     </Router>
   );
