@@ -10,6 +10,7 @@ import Header from "./Components/Header";
 import Indexbody from './Components/Indexbody';
 import LogIn from "./Components/LogIn";
 import ViewResources from "./Components/ViewResources";
+import Profile from "./Components/Profile";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Route exact path="/header" element={<Header/>}/>
           <Route exact path="/footer" element={<Footer/>}/>
           <Route exact path="/viewres" element={<><Header/><ViewResources/><Footer/></>}/>
+          <Route exact path="/profile" element={<><Header/><Profile/><Footer/></>}/>
         </Routes>
     </Router>
   );
