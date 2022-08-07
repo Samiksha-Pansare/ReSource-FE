@@ -1,3 +1,7 @@
+body,html {
+  width: 100vw !important;
+  overflow-x: hidden;
+}
 img {
   width: 100%;
 }
@@ -13,6 +17,12 @@ img {
   padding: 0%;
   margin: 0;
   font-size: 0.5 em;
+}
+#date{
+  width: 300px;
+}
+#standard-basic {
+  width: 300px;
 }
 #container {
   max-width: 300px;
