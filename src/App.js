@@ -11,6 +11,7 @@ import Indexbody from './Components/Indexbody';
 import LogIn from "./Components/LogIn";
 import ViewResources from "./Components/ViewResources";
 import Profile from "./Components/Profile";
+import Resourcedetail from "./Components/Resourcedetail";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
           <Route exact path="/footer" element={<Footer/>}/>
           <Route exact path="/viewres" element={<><Header/><ViewResources/><Footer/></>}/>
           <Route exact path="/profile" element={<><Header/><Profile/><Footer/></>}/>
+          <Route exact path="/resdetail" element={<><Header/><Resourcedetail/><Footer/></>}/>
         </Routes>
     </Router>
   );
