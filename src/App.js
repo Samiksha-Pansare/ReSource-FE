@@ -12,6 +12,7 @@ import LogIn from "./Components/LogIn";
 import ViewResources from "./Components/ViewResources";
 import Profile from "./Components/Profile";
 import Resourcedetail from "./Components/Resourcedetail";
+import Cart from "./Components/Cart";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
           <Route exact path="/viewres" element={<><Header/><ViewResources/><Footer/></>}/>
           <Route exact path="/profile" element={<><Header/><Profile/><Footer/></>}/>
           <Route exact path="/resdetail" element={<><Header/><Resourcedetail/><Footer/></>}/>
+          <Route exact path="/cart" element={<><Header/><Cart/><Footer/></>}/>
         </Routes>
     </Router>
   );
