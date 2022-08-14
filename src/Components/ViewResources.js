@@ -9,6 +9,7 @@ import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select, { SelectChangeEvent } from '@mui/material/Select';
 import Button from '@mui/material/Button';
+import Pagination from '@mui/material/Pagination';
 
 
 export default function ViewResources() {
@@ -38,7 +39,7 @@ export default function ViewResources() {
             <div className="col-md-3 d-flex justify-content-center">
               <FormControl variant="standard" >
                 <InputLabel id="demo-simple-select-standard-label">
-                  Age
+                  Institute
                 </InputLabel>
                 <Select
                   labelId="demo-simple-select-standard-label"
@@ -74,9 +75,11 @@ export default function ViewResources() {
 
                 {/* <!-- A div with name class for the name of the card --> */}
                 <div className="name">Equipment Name</div>
+                {/* <span class="discount">Partially Available</span> */}
 
                 <div className="">
                   <ul>
+                    <li className="lires boldline">Availability: Partially Available</li>
                     <li className="lires">Cost: 1000 Rs/hour</li>
                     <li className="lires">Institute Name: VIT,Mumbai</li>
                     <li className="lires">Capacity: 100</li>
@@ -103,6 +106,7 @@ export default function ViewResources() {
 
                 <div className="">
                   <ul>
+                    <li className="lires boldline">Availability: Partially Available</li>
                     <li className="lires">Cost: 1000 Rs/hour</li>
                     <li className="lires">Institute Name: VIT,Mumbai</li>
                     <li className="lires">Capacity: 100</li>
@@ -125,9 +129,10 @@ export default function ViewResources() {
 
                 {/* <!-- A div with name class for the name of the card --> */}
                 <div className="name">Equipment Name</div>
-
+                {/* <span class="discount">Partially Available</span> */}
                 <div className="">
                   <ul>
+                    <li className="lires boldline">Availability: Partially Available</li>
                     <li className="lires">Cost: 1000 Rs/hour</li>
                     <li className="lires">Institute Name: VIT,Mumbai</li>
                     <li className="lires">Capacity: 100</li>
@@ -140,7 +145,8 @@ export default function ViewResources() {
           </div>
         </div>
         <div className="d-flex justify-content-center">
-        <Button variant="text">Show More</Button>
+        {/* <Button variant="text">Show More</Button> */}
+        <Pagination count={10} variant="outlined"  color="primary" />
         </div>
       </div>
     </>
