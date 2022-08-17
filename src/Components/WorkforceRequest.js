@@ -1,6 +1,7 @@
 import React from 'react';
 import "../Css/wfreq.css";
-import profile from "../Images/user-account.png"
+import profile from "../Images/user-account.png";
+
 
 export default function WorkforceRequest() {
   return (
@@ -23,7 +24,14 @@ export default function WorkforceRequest() {
                             </ul>
                         </div>
                     </div>
-                    <a className="btn_primary" href='#' target="_blank">Approve</a>
+                    <div className='row'>
+                        <div className='col-md-6'>
+                            <button className="btn_primary">Approve</button>
+                        </div>
+                        <div className='col-md-6'>
+                            <button className="btn_primary">Reject</button>
+                        </div>
+                    </div>
                 </div>
         </div>
         </div>
@@ -44,7 +52,14 @@ export default function WorkforceRequest() {
                             </ul>
                         </div>
                     </div>
-                    <a className="btn_primary" href='#' target="_blank">Approve</a>
+                    <div className='row'>
+                        <div className='col-md-6'>
+                            <button className="btn_primary">Approve</button>
+                        </div>
+                        <div className='col-md-6'>
+                            <button className="btn_primary">Reject</button>
+                        </div>
+                    </div>
                 </div>
         </div>
         </div>

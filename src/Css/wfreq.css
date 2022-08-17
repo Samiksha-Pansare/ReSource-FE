@@ -76,6 +76,7 @@ h1.wf-position {
   box-shadow: 1px 10px 2rem rgb(13, 110, 253,0.8);
   transition: all 0.2s ease-in;
   text-decoration: none;
+  width: 141px;
 }
 
 .btn_primary:hover {
@@ -163,6 +164,8 @@ h1.wf-position {
       box-shadow: 1px 10px 2rem rgb(13, 110, 253,0.8);
       transition: all 0.2s ease-in;
       text-decoration: none;
+      width: 141px;
+      margin-bottom: 30px;
     }
     
     .btn_primary:hover {
