@@ -40,6 +40,11 @@ export default function Header() {
                   Contact
                 </Link>
               </li>
+              <li className="nav-item">
+                <Link className="nav-link" to="#">
+                  Cart
+                </Link>
+              </li>
               <li className="nav-item">             
                 <Link className="nav-link service-dropdown" to="#">
                   <Dropdown className="servicebtn">

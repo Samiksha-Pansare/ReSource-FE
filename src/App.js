@@ -18,6 +18,7 @@ import Addlab from "./Components/Addlab";
 import AddWorkforce from "./Components/AddWorkforce";
 import InstituteCompletion from "./Components/InstituteCompletion";
 import WorkforceRequest from "./Components/WorkforceRequest";
+import Paynow from "./Components/Paynow";
 
 function App() {
   return (
@@ -36,6 +37,7 @@ function App() {
           <Route exact path="/addlab" element={<><Header/><Addlab/><Footer/></>}/>
           <Route exact path="/addwf" element={<><Header/><AddWorkforce/><Footer/></>}/>
           <Route exact path="/wfrequest" element={<><Header/><WorkforceRequest/><Footer/></>}/>
+          <Route exact path="/pay" element={<Paynow/>}/>
         </Routes>
     </Router>
   );
