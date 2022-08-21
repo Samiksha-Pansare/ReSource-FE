@@ -160,6 +160,7 @@
     font-size: 20px;
     letter-spacing: 0.64px;
     margin-left: 0px;
+    width: 200px;
   }
   .detail-list {
     font-size: 1.0rem;
@@ -176,7 +177,9 @@
   .res-cards {
     margin-top: 50px;
   }
-
+  .addstaffbtn{
+    float: right;
+  }
   
 /* RESPONSIVE DESIGNS */
 /* // Small devices (landscape phones, 576px and up) */
