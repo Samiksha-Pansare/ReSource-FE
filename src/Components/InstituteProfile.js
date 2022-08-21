@@ -6,7 +6,8 @@ import Pagination from '@mui/material/Pagination';
 import chem from "../Images/chem-quip.jpg";
 import bio from "../Images/images.jpg";
 import phy from "../Images/microscope.jpg";
- 
+import EditIcon from '@mui/icons-material/Edit';
+
 export default function InstituteProfile() {
   return (
     <>
@@ -55,6 +56,7 @@ export default function InstituteProfile() {
         <div className='col-md-4'>
         <div className="card profilecards">
             <div className="card__details">
+            <h3>Profile details <Link to="/"><EditIcon></EditIcon></Link></h3>
             <ul className="list-bullets detail-list">
               <li className="mb-2"><strong className='strlist'>City: </strong> Pune</li>
               <li className="mb-2"><strong className='strlist'>State: </strong> Mahrashtra</li>
