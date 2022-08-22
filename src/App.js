@@ -25,6 +25,11 @@ import WorkforceProfile from "./Components/WorkforceProfile";
 import UniversityProfile from "./Components/UniversityProfile";
 import UGCProfile from "./Components/UGCProfile";
 import UGCStaffProfile from "./Components/UGCStaffProfile";
+import AccountsProfile from "./Components/AccountsProfile";
+import ViewLabs from "./Components/ViewLabs";
+import ResourceRequest from "./Components/ResourceRequest";
+import EditResourceRequestspage from "./Components/EditResourceRequestspage";
+import ResourceApproval from "./Components/ResourceApproval";
 
 function App() {
   return (
@@ -36,7 +41,6 @@ function App() {
           <Route exact path="/header" element={<Header/>}/>
           <Route exact path="/footer" element={<Footer/>}/>
           <Route exact path="/viewres" element={<><Header/><ViewResources/><Footer/></>}/>
-          <Route exact path="/profile" element={<><Header/><Profile/><Footer/></>}/>
           <Route exact path="/resdetail" element={<><Header/><Resourcedetail/><Footer/></>}/>
           <Route exact path="/cart" element={<><Header/><Cart/><Footer/></>}/>
           <Route exact path="/instituteProfile" element={<><Header/><InstituteProfile/><Footer/></>}/>
@@ -50,6 +54,11 @@ function App() {
           <Route exact path="/universityProfile" element={<><Header/><UniversityProfile/><Footer/></>}/>
           <Route exact path="/ugcProfile" element={<><Header/><UGCProfile/><Footer/></>}/>
           <Route exact path="/ugcStaffProfile" element={<><Header/><UGCStaffProfile/><Footer/></>}/>
+          <Route exact path="/accountsProfile" element={<><Header/><AccountsProfile/><Footer/></>}/>
+          <Route exact path="/viewlabs" element={<><Header/><ViewLabs/><Footer/></>}/>
+          <Route exact path="/resorcerequest" element={<><Header/><ResourceRequest/><Footer/></>}/>
+          <Route exact path="/editresorcerequest" element={<><Header/><EditResourceRequestspage/><Footer/></>}/>
+          <Route exact path="/resourceapproval" element={<><Header/><ResourceApproval/><Footer/></>}/>
         </Routes>
     </Router>
   );

@@ -25,7 +25,7 @@ export default function WorkforceProfile() {
             </div>
             <div className='col-md-10'>
               <p>
-                <h1 className="Profile-name">Institute Name</h1>
+                <h1 className="Profile-name">Name</h1>
               </p>
             </div>
           </div>
