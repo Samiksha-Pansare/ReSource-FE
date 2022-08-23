@@ -30,6 +30,8 @@ import ViewLabs from "./Components/ViewLabs";
 import ResourceRequest from "./Components/ResourceRequest";
 import EditResourceRequestspage from "./Components/EditResourceRequestspage";
 import ResourceApproval from "./Components/ResourceApproval";
+import UniversityList from "./Components/UniversityList";
+import InstituteList from "./Components/InstituteList";
 
 function App() {
   return (
@@ -59,6 +61,8 @@ function App() {
           <Route exact path="/resorcerequest" element={<><Header/><ResourceRequest/><Footer/></>}/>
           <Route exact path="/editresorcerequest" element={<><Header/><EditResourceRequestspage/><Footer/></>}/>
           <Route exact path="/resourceapproval" element={<><Header/><ResourceApproval/><Footer/></>}/>
+          <Route exact path="/universityList" element={<><Header/><UniversityList/><Footer/></>}/>
+          <Route exact path="/instituteList" element={<><Header/><InstituteList/><Footer/></>}/>
         </Routes>
     </Router>
   );
