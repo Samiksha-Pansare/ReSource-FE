@@ -13,7 +13,7 @@ export default function WorkforceProfile() {
   return (
     <>
     <div className='container profile-container'>
-      <div className='bg-box'>
+      <div className='institute-bg-box'>
       </div>
       <div className='blur-bg'>
         <div className='inner-blur MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-3 css-b5x8ma'>
@@ -189,7 +189,7 @@ export default function WorkforceProfile() {
         </div>
         <div className="d-flex justify-content-center">
         {/* <Button variant="text">Show More</Button> */}
-        <Pagination count={10} variant="outlined"  color="primary" />
+        <Pagination count={1} variant="outlined"  color="primary" />
         </div>
         {/* Labs  */}
         <p className='heading'><h3 class="heading_name">Labs Managed By You</h3></p>
@@ -278,7 +278,7 @@ export default function WorkforceProfile() {
         </div>
         <div className="d-flex justify-content-center">
         {/* <Button variant="text">Show More</Button> */}
-        <Pagination count={10} variant="outlined"  color="primary" />
+        <Pagination count={1} variant="outlined"  color="primary" />
         </div>
     </div>   
     </>

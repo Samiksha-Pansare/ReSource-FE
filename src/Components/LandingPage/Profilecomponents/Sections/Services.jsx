@@ -9,6 +9,8 @@ import AddImage1 from "../../Profileassets/img/add/1.png";
 import AddImage2 from "../../Profileassets/img/add/2.png";
 import AddImage3 from "../../Profileassets/img/add/3.png";
 import AddImage4 from "../../Profileassets/img/add/4.png";
+import {Link} from "react-router-dom";
+
 export default function Services() {  
   return (
     <Wrapper id="services">
@@ -18,9 +20,7 @@ export default function Services() {
           <HeaderInfo>
             <h1 className="font40 extraBold">Our Awesome Services</h1>
             <p className="font13">
-              Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
-              <br />
-              labore et dolore magna aliquyam erat, sed diam voluptua.
+              
             </p>
             {/* hi */}
           </HeaderInfo>
@@ -29,26 +29,26 @@ export default function Services() {
               <ServiceBox
                 icon="browser"
                 title="Resource Allocation"
-                subtitle="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua."
+                subtitle="All can practice real-life science and gain practical knowledge."
               />
             </ServiceBoxWrapper>
             <ServiceBoxWrapper>
               <ServiceBox
                 icon="monitor"
-                title="Payment Analytics"
-                subtitle="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore."
+                title="Interactive UI"
+                subtitle="A simple yet effetive interface that conveys all information to all users ."
               />
             </ServiceBoxWrapper>
-            <ServiceBoxWrapper>
+            <ServiceBoxWrapper >
               <ServiceBox
                 icon="hierarchy"
                 title="Role Based Hierarchy"
-                subtitle="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat."
+                subtitle="Making system more secure and optimal for all users. "
               />
             </ServiceBoxWrapper>
-             <ServiceBoxWrapper>
+             {/* <ServiceBoxWrapper>
               <ServiceBox icon="printer" title="Secure ID Card" subtitle="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor." />
-            </ServiceBoxWrapper> 
+            </ServiceBoxWrapper>  */}
           </ServiceBoxRow>
         </div>
         <div className="lightBg">
@@ -61,14 +61,11 @@ export default function Services() {
                 <p className="font12">
                   
                 </p>
-                <ButtonsRow className="flexNullCenter" style={{ margin: "30px 0"}}>
+                {/* <ButtonsRow className="flexNullCenter" style={{ margin: "30px 0"}}>
                   <div style={{ width: "190px" }}>
-                    <FullButton title="Get Started" action={() => alert("clicked")} />
+                    <Link to = "/login"><FullButton title="Get Started" /></Link>
                   </div>
-                  <div style={{ width: "190px", marginLeft: "15px" }}>
-                    <FullButton title="Contact Us" action={() => alert("clicked")} border />
-                  </div>
-                </ButtonsRow>
+                </ButtonsRow> */}
               </AddLeft>
               <AddRight>
                 <AddRightInner>

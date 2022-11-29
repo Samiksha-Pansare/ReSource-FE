@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 // Assets
 
-import HeaderImage from "../../Profileassets/img/header-img.png";
+import HeaderImage from "../../Profileassets/img/new-img.jpg";
 
 import Dots from "../../Profileassets/svg/Dots";
 import InputLabel from '@mui/material/InputLabel';
@@ -16,17 +16,18 @@ import Select from '@mui/material/Select';
 
 
 export default function Header() {
-  const [role, setRole] = React.useState('');
+  const [role, setRole] = React.useState(''); 
 
   const handleChange = (event) => {
     setRole(event.target.value);
   };
   return (
     
-    <Wrapper id="home" className="landing-page-container flexSpaceCenter">
+    <Wrapper id="home" className="landing-page-container flexSpaceCenter" style={{paddingTop: "0px"}} >
       <LeftSide className="flexCenter">
         <div>
-          <h1 className="extraBold font60">We are Resource Sharing Agency.</h1>
+          <h1 className="extraBold font90">We are Resource Sharing Portal.</h1>
+
           <HeaderP className="font20 semiBold">
           We aim to help out the community by sharing, <br></br>You'll find all types of resources here
           </HeaderP>
@@ -35,7 +36,7 @@ export default function Header() {
           
           <div>
           <>
-          <FormControl sx={{ m: 1, minWidth: 150 }}>
+          {/* <FormControl sx={{ m: 1, minWidth: 150 }}>
             <InputLabel id="demo-simple-select-autowidth-label" >Login/SignUp</InputLabel>
             <Select
               class="btn-profile-login"
@@ -56,14 +57,14 @@ export default function Header() {
               <MenuItem value={21}>Lab Assistant</MenuItem>
               <MenuItem value={22}>Teacher</MenuItem>
             </Select>
-          </FormControl>
+          </FormControl> */}
           </>
         </div>
         </div>
       </LeftSide>
       <RightSide>
         <ImageWrapper>
-          <Img className="radius8" src={HeaderImage} alt="office" style={{zIndex: 9}} />
+          <Img className="radius8" src={HeaderImage} alt="office" style={{zIndex: "9", marginTop:"50px"}} />
           {/* <QuoteWrapper className="flexCenter darkBg radius8">
             <QuotesWrapper>
               <QuotesIcon />
@@ -89,7 +90,7 @@ export default function Header() {
 const Wrapper = styled.section`
   padding-top: 80px;
   width: 100%;
-  min-height: 840px;
+  min-height: 50vw;
   @media (max-width: 960px) {
     flex-direction: column;
   }

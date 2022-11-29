@@ -2,8 +2,15 @@ import { Add, Remove } from "@material-ui/icons";
 import IconButton from '@material-ui/core/IconButton';
 import styled from "styled-components";
 import { mobile } from "../Css/responsive";
+import React,{useEffect, useState} from "react";
+import Chip from '@mui/material/Chip';
+import Stack from '@mui/material/Stack';
+import {Routes, Route, useNavigate, useLocation} from 'react-router-dom';
+import img1 from "../temp_images/temp1.jpeg";
 
-import img1 from "../Images/microscope.jpg"
+
+// import img1 from "../Images/microscope.jpg"
+import { height } from "@mui/system";
 const Container = styled.div``;
 
 const Wrapper = styled.div`
@@ -48,28 +55,49 @@ const Info = styled.div`
 const Product = styled.div`
   display: flex;
   justify-content: space-between;
+  border: 1px solid #f2f8f9;
+  margin: 10px;
+  box-shadow: 0 5px 7px -1px rgba(51, 51, 51, 0.23);
   ${mobile({ flexDirection: "column" })}
 `;
 
 const ProductDetail = styled.div`
-  flex: 2;
+  flex : 4;
+  
   display: flex;
+  ${mobile({ flexDirection: "column" })}
+  ${mobile({ lineHeight: "24 px" })}
+  ${mobile({ display: "auto" })}
 `;
 
 const Image = styled.img`
-  width: 200px;
+  width: 50%;
+  padding-bottom : 10px;
+  ${mobile({width:"100%"})}
 `;
 
 const Details = styled.div`
-  padding: 20px;
+  padding: 5px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  ${mobile({ flexDirection: "column" })}
 `;
 
-const ProductName = styled.span``;
+const ProductName = styled.span`
+  display:flex;
+  flex-direction: column;
+  justify-content: space-around;
 
-const ProductId = styled.span``;
+  ${mobile({ flexDirection: "row" })}
+`;
+
+const ProductId = styled.span`
+  display:flex;
+  flex-direction: column;
+  justify-content: space-around;
+
+  ${mobile({ flexDirection: "row" })}`;
 
 // const ProductColor = styled.div`
 //   width: 20px;
@@ -118,6 +146,10 @@ const Summary = styled.div`
   border-radius: 10px;
   padding: 20px;
   height: 80%;
+  border: 1px solid #f2f8f9;
+  margin: 10px;
+  box-shadow: 0 5px 7px -1px rgba(51, 51, 51, 0.23);
+  
 `;
 
 const SummaryTitle = styled.h1`
@@ -142,91 +174,162 @@ const Button = styled.button`
   background-color: #1ca9c9;
   color: white;
   font-weight: 600;
+  border-radius: 20px;
 `;
 
 const Cart = () => {
+  const navigate = useNavigate();
+  const [res,setRes] = useState();
+  const [isloaded,setIsloaded] = useState(false);
+  // useEffect(() => {
+ 
+  //     fetch("http://127.0.0.1:8000/resource/cart/",
+  //     {headers:{'Authorization':sessionStorage.getItem('token')}
+  //     }).then(response=>response.json())
+  //     .then(body=>  {setRes(body);
+  //     setIsloaded(true);
+  //   })
+
+            // setPageCount(resource.total_pages); 
+          
+  // }, [])
+  // console.log(res);
+  // const moreres = () =>{
+  //   window.location.href = "/viewres"
+  // }
+
+  // const handleremove = (e,cart_id) =>{
+  //   fetch("http://127.0.0.1:8000/resource/removeitem/"
+  //   ,{method: 'POST',
+  //   headers: { "Content-Type": "application/json",'Authorization':sessionStorage.getItem('token') },
+  //   body: JSON.stringify({"c_id":cart_id})
+  // }
+  //   ).then(async response=>{
+  //     const data = await response.json();
+  //     console.log(data)
+  //     if(data['status'] == 200){
+  //       console.log("Success removed a resource")
+  //     }})
+  //     window.location.href = '/cart';
+  // } 
+  // const handlepayment = () =>{
+  //   fetch("http://127.0.0.1:8000/placeorder/requesttopay/"
+  //   ,{method: 'POST',
+  //   headers: { "Content-Type": "application/json",'Authorization':sessionStorage.getItem('token')}
+  // }
+  //   ).then(async response=>{
+  //     const data = await response.json();
+  //     console.log(data)
+  //     if(data['status'] == 200){
+  //       console.log("Order sent to the Accounts Department")
+  //     }})
+  //     window.location.href = '/cart';
+  // }
   return (
-    <Container>
-      
-      
-      <Wrapper>
-        <Title>YOUR CART</Title>
-        <Top>
-          <TopButton>ADD RESOURCES</TopButton>
-          {/* <TopTexts>
-            <TopText>Shopping Bag(2)</TopText>
-            <TopText>Your Wishlist (0)</TopText>
-          </TopTexts> */}
-          <TopButton type="filled">CHANGE SLOT TIMINGS</TopButton>
-        </Top>
-        <Bottom>
-          <Info>
-            <Product>
+   <Container>
+        
+        
+   <Wrapper>
+     <Title>YOUR CART</Title>
+     <Top>
+       <TopButton onClick="/addres">ADD RESOURCES</TopButton>
+       {/* <TopTexts>
+         <TopText>Shopping Bag(2)</TopText>
+         <TopText>Your Wishlist (0)</TopText>
+       </TopTexts> */}
+       {/* <TopButton type="filled">CHANGE SLOT TIMINGS</TopButton> */}
+     </Top>
+     <Bottom>
+       <Info>
+          <div>
+
+         <Product>
+           <ProductDetail>
+             <Image src={img1} />
+             <Details>
+               <ProductName>
+                 <b>Product:</b> MicroScope
+               </ProductName>
+               <ProductName>
+                 <b>Institute Name:</b> VJTI
+               </ProductName>
+               {/* <ProductName>
+                 <b>Institute Address:</b> Address
+               </ProductName> */}
+               <ProductId>
+                 <b>Date:</b> 25-12-2022
+               </ProductId>
+               {/* <ProductColor color="black" /> */}
+               <ProductSize>
+                 <b>Time slot</b> 9:00 - 10:00
+               </ProductSize>
+         
+               <ProductSize>
+               <Chip label="Approved" color="success"  />
+               </ProductSize>
                
-              <ProductDetail>
-                <Image src={img1} />
-                <Details>
-                  <ProductName>
-                    <b>Product:</b> Name
-                  </ProductName>
-                  <ProductName>
-                    <b>Institute Name:</b> Name
-                  </ProductName>
-                  <ProductName>
-                    <b>Institute Address:</b> Address
-                  </ProductName>
-                  <ProductId>
-                    <b>Date:</b> 12/12/2012
-                  </ProductId>
-                  {/* <ProductColor color="black" /> */}
-                  <ProductSize>
-                    <b>Time slot</b> 7:00pm-8:00pm
-                  </ProductSize>
-                </Details>
-              </ProductDetail>
-              <PriceDetail>
-                <ProductAmountContainer>
-                {/* <IconButton color="#1ca9c9"><Add /></IconButton>
-                 <ProductAmount>1</ProductAmount> */}
-                 <IconButton color="#1ca9c9"><Remove /></IconButton>
-                  {/* <Add />
-                  <ProductAmount>2</ProductAmount>
-                  <Remove /> */}
-                </ProductAmountContainer>
-                <ProductPrice>₹ 30</ProductPrice>
-              </PriceDetail>
-            </Product>
-            <Hr />
-            
-          </Info>
-          <Summary>
-            <SummaryTitle>ORDER SUMMARY</SummaryTitle>
-            <SummaryItem>
-              <SummaryItemText>Subtotal</SummaryItemText>
-              <SummaryItemPrice>₹10</SummaryItemPrice>
-            </SummaryItem>
-            <SummaryItem>
-              <SummaryItemText>CGST</SummaryItemText>
-              <SummaryItemPrice>₹10</SummaryItemPrice>
-            </SummaryItem>
-            <SummaryItem>
-              <SummaryItemText>SGST</SummaryItemText>
-              <SummaryItemPrice>₹10</SummaryItemPrice>
-            </SummaryItem>
-            <SummaryItem>
-              <SummaryItemText>Discount</SummaryItemText>
-              <SummaryItemPrice>-₹10</SummaryItemPrice>
-            </SummaryItem>
-            <SummaryItem type="total">
-              <SummaryItemText>Total</SummaryItemText>
-              <SummaryItemPrice>₹0</SummaryItemPrice>
-            </SummaryItem>
-            <Button>PROCEED TO PAYMENT</Button>
-          </Summary>
-        </Bottom>
-      </Wrapper>
-      
-    </Container>
+               {/* {item.is_approved===0 &&
+               <ProductSize>
+               <Chip label="Not Yet Approved" color="info"  />
+               </ProductSize>
+               } */}
+               {/* {item.is_approved===-1 &&
+               <ProductSize>
+               <Chip label="Rejected" color="error"  />
+               </ProductSize>
+               } */}
+               <ProductSize>
+               <Chip label="Order sent" color="success"  />
+               </ProductSize>
+               
+          
+             </Details>
+           </ProductDetail>
+           <PriceDetail>
+             <ProductAmountContainer>
+             {/* <IconButton color="#1ca9c9"><Add /></IconButton>
+             <ProductAmount>1</ProductAmount> */}
+             <IconButton color="#1ca9c9" ><Remove /></IconButton>
+               {/* <Add />
+               <ProductAmount>2</ProductAmount>
+               <Remove /> */}
+             </ProductAmountContainer>
+             <ProductPrice>₹ 1000</ProductPrice>
+           </PriceDetail>
+         </Product>
+         <Hr />
+         </div>
+         
+       </Info>
+       <Summary>
+         <SummaryTitle>ORDER SUMMARY</SummaryTitle>
+         <SummaryItem>
+           <SummaryItemText>Subtotal</SummaryItemText>
+           <SummaryItemPrice>₹2000</SummaryItemPrice>
+         </SummaryItem>
+         <SummaryItem>
+           <SummaryItemText>Transaction Fees (%)</SummaryItemText>
+           <SummaryItemPrice>18%</SummaryItemPrice>
+         </SummaryItem>
+         <SummaryItem>
+           <SummaryItemText>GST (%)</SummaryItemText>
+           <SummaryItemPrice>18%</SummaryItemPrice>
+         </SummaryItem>
+         {/* <SummaryItem>
+           <SummaryItemText>Discount</SummaryItemText>
+           <SummaryItemPrice>-₹10</SummaryItemPrice>
+         </SummaryItem> */}
+         <SummaryItem type="total">
+           <SummaryItemText>Total</SummaryItemText>
+           <SummaryItemPrice>₹2360</SummaryItemPrice>
+         </SummaryItem>
+         <Button onClick="/pay">PROCEED TO PAYMENT</Button>
+       </Summary>
+     </Bottom>
+   </Wrapper>
+   
+ </Container>
+ 
   );
 };
 

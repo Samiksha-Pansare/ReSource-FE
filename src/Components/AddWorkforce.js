@@ -3,10 +3,11 @@ import "../Css/addWorkforce.css";
 import Dropdown from "react-bootstrap/Dropdown";
 
 export default function AddWorkforce() {
+  
   return (
     <>
     <div className="container form-container">
-    <div className="title">Hello User</div>
+    <div className="title title-wf-form">Add Workforce</div>
     <div className="content">
       <form action="#">
         <div className="user-details">
@@ -17,7 +18,7 @@ export default function AddWorkforce() {
           
           <div className="input-box">
             <span className="details">Institute</span>
-            <Dropdown class="dropdown">
+            <Dropdown className="dropdown dropdown-wf">
               <Dropdown.Toggle variant="light" id="dropdown-basic" ClassName="dropdownbtn">
                 Select Institute
               </Dropdown.Toggle>
@@ -37,7 +38,7 @@ export default function AddWorkforce() {
           </div>
           <div className="input-box">
              <span className="details">Position</span>
-             <Dropdown class="dropdown">
+             <Dropdown className="dropdown dropdown-wf">
               <Dropdown.Toggle variant="light" id="dropdown-basic" ClassName="dropdownbtn">
                 Select Position
               </Dropdown.Toggle>
@@ -65,12 +66,12 @@ export default function AddWorkforce() {
           
           <div className="input-box">
             <span className="details">ID card</span>
-            <input type="file" placeholder="Registration Number" required/>
+            <input type="file" className="input-file" placeholder="Registration Number" required/>
           </div>
           
         </div>
-        <div className="button">
-          <input type="submit" value="Register"/>
+        <div className="btn btn-primary btn-wf" type="submit">
+           Register
         </div>
         
       </form>
